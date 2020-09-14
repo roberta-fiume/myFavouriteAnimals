@@ -1,34 +1,41 @@
 /* eslint-disable*/
 <template>
   <div id="intro">
-    <h1>{{ header }}</h1>
+    
     <div class="menu-main">
       <div class="menu-icon-cont">
-        <i class="fas fa-bars burger" @click="toggle()"></i>
+          <i class="fas fa-bars burger" @click="toggle()"></i>
 
-        <div class="menu-list" v-if="toggleMenu">
-          <li class="menu-list-name">
-            <p class="menu-list-parag">Cats</p>
-          </li>
+          <div class="menu-list" v-if="toggleMenu">
+            <li class="menu-list-name">
+              <p class="menu-list-parag">Cats</p>
+            </li>
 
-          <li class="menu-list-name">
-            <p class="menu-list-parag">Bears</p>
-          </li>
+            <li class="menu-list-name">
+              <p class="menu-list-parag">Bears</p>
+            </li>
 
-          <li class="menu-list-name">
-            <p class="menu-list-parag">Koalas</p>
-          </li>
+            <li class="menu-list-name">
+              <p class="menu-list-parag">Koalas</p>
+            </li>
+          </div>
         </div>
-
-      </div>
     </div>
-
-
+    <div class="menu-main-images-cont">
+      <h1>{{ header }}</h1>
+      <MainImages/>
+    </div>
   </div>
 </template>
 
 <script>
+import MainImages from "../components/MainImages.vue"
+
+
 export default {
+   components: {
+    MainImages
+  },
   data() {
     return {
       header: 'My favourite animals',
@@ -46,7 +53,9 @@ export default {
 
 <style>
 #intro {
-  text-align:center; 
+  display: flex;
+  flex-direction: row; 
+  justify-content: flex-start;
   font-family: 'Grandstander', cursive;
 }
 
@@ -62,10 +71,19 @@ export default {
   display: flex;
   position: absolute;
   flex-direction: column;
+  justify-content: space-between;
   top: 80px;
+  border: 2px solid blue;
+}
+
+.menu-icon-menu-list-cont {
+   display: flex;
+   flex-direction: column;
+   border: 2px solid yellow;
 }
 
 .burger {
+  width: 0;
   font-size: 30px;
   display: flex;
   position: relative;
@@ -76,7 +94,7 @@ export default {
 .menu-list {
   width: 135px;
   list-style-type: none;
-  border: 2px solid #753CDF;
+  border: 2px solid #7E3FF2;
   border-radius: 3px;
   position: relative;
   bottom: -25px;
@@ -94,6 +112,12 @@ export default {
 .menu-list-parag:hover {
   border-bottom: 2px solid #d7c7f5;
   padding-bottom: 2px;
+}
+
+.menu-main-images-cont {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid lightsalmon;
 }
 </style>
 
