@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="img-cont">
-            <img :src="images.cat"/>
+            <img :src="images.cat" class="img-main"/>
         </div>
 
     </div>
@@ -18,3 +18,10 @@ export default {
     }
 }
 </script>
+
+<style>
+.img-main {
+    width: 100%;
+    height: auto;
+}
+</style>

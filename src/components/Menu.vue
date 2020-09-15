@@ -73,7 +73,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   top: 80px;
-  border: 2px solid blue;
+ /*  border: 2px solid blue; */
 }
 
 .menu-icon-menu-list-cont {
@@ -116,8 +116,11 @@ export default {
 
 .menu-main-images-cont {
   display: flex;
+  margin-left: 200px;
   flex-direction: column;
   border: 2px solid lightsalmon;
+  width: 500px;
+  height: auto;
 }
 </style>
 
